@@ -91,3 +91,14 @@ class Move {
         System.out.println("The scarf is in the cardboard number " + move.find("scarf"));
     }
 }
+
+class Box {
+    private int capacity;
+    private int number;
+    private List<Object> items = new ArrayList<>();
+
+    // Constructor for the Box class
+    public Box(int capacity, int number) {
+        this.capacity = capacity;
+        this.number = number;
+    }
