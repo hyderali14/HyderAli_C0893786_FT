@@ -119,4 +119,18 @@ class Box {
         }
     }
 
-   
+    // Method to find the number of the outermost cardboard containing a specific item
+    public int findItem(String itemName) {
+        for (Object item : items) {
+            if (item instanceof SingleObject && ((SingleObject) item).getName().equals(itemName)) {
+                return number;
+            } else if (item instanceof Box) {
+                int result = ((Box) item).findItem(itemName);
+                if (result != -1) {
+                    return result;
+                }
+            }
+        }
+        return -1;
+    }
+}
