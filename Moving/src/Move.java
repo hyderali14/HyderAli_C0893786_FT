@@ -102,3 +102,21 @@ class Box {
         this.capacity = capacity;
         this.number = number;
     }
+
+    // Method to add an item to the box
+    public void addItem(Object item) {
+        items.add(item);
+    }
+
+    // Method to print the objects contained in the box
+    public void printObjects() {
+        for (Object item : items) {
+            if (item instanceof SingleObject) {
+                System.out.println(((SingleObject) item).getName());
+            } else if (item instanceof Box) {
+                ((Box) item).printObjects();
+            }
+        }
+    }
+
+   
